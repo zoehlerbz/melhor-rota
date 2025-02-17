@@ -35,32 +35,6 @@ O algoritmo de força bruta utilizado para encontrar a melhor rota verifica **to
 
 ***
 
-## 📌 Fórmula de Haversine para cálculo da distância entre dois pontos no globo
-
-A fórmula de Haversine é usada para calcular a distância entre dois pontos na superfície da Terra, levando em conta sua curvatura. A equação é:
-
-\[
-a = \sin^2\left(\frac{\Delta\phi}{2}\right) + \cos(\phi_1) \cdot \cos(\phi_2) \cdot \sin^2\left(\frac{\Delta\lambda}{2}\right)
-\]
-
-\[
-c = 2 \cdot \text{atan2}\left(\sqrt{a}, \sqrt{1-a}\right)
-\]
-
-\[
-d = R \cdot c
-\]
-
-Onde:
-
-- \( \phi_1, \lambda_1 \) são a latitude e longitude do primeiro ponto (em radianos).
-- \( \phi_2, \lambda_2 \) são a latitude e longitude do segundo ponto (em radianos).
-- \( \Delta\phi = \phi_2 - \phi_1 \) e \( \Delta\lambda = \lambda_2 - \lambda_1 \) são as diferenças entre as latitudes e longitudes.
-- \( R \) é o raio médio da Terra, aproximadamente **6371 km**.
-- \( d \) é a distância entre os pontos ao longo da superfície da Terra.
-
-***
-
 ## Instalação
 
 1. Clone o repositório:
@@ -71,7 +45,7 @@ git clone https://github.com/seu-usuario/melhor-rota.git
 2. Navegue até o diretório do projeto:
 
 ```bash
-cd BirdLens
+cd Caixeiro viajante
 ```
 3. Instale as dependências:
 
