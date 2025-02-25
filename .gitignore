@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 *.log
 passo-a-passo.md
+caixeiro_viajante/data/temp/*
