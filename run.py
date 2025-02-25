@@ -5,7 +5,7 @@ BASEDIR = os.getcwd()
 PATH = os.path.join(BASEDIR, 'caixeiro_viajante', 'data', 'coordenadas.csv')
 
 def main():
-    app = App(PATH)
+    app = App(PATH, 'Curitiba', 'Foz do Iguaçu')
     app.run()
 
 if __name__ == '__main__':

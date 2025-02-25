@@ -1,4 +1,6 @@
+from math import factorial
 from itertools import permutations
+from caixeiro_viajante.src.utils import loading_bar
 
 class BestRoute:
     def __init__(self, matrix, start_index=0, end_index=0):
@@ -17,7 +19,11 @@ class BestRoute:
         min_distance = float('inf')
         best_route = None
 
-        for perms in permutations(cities):  # Ordem de cidades, sem repetições
+        total = factorial(len(cities))  # Número total de permutações
+        interval = max(1, total // 100)  # Atualiza a barra de progresso a cada 1% ou 100 iterações, o que for maior
+
+        for i, perms in enumerate(permutations(cities)):  # Ordem de cidades, sem repetições
+            loading_bar(i, total, interval)  # Atualiza a barra de progresso
             if perms[0] == self.start_index and perms[-1] == end:
                 perms = list(perms)  # Converte 'perms' para lista
                 if self.start_index == self.end_index:
@@ -28,5 +34,6 @@ class BestRoute:
                 if distance < min_distance:
                     min_distance = distance
                     best_route = route
-
+            
+        print()  # Quebra a linha após a barra de progresso
         return best_route, min_distance
